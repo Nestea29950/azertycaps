@@ -1,12 +1,13 @@
-<script setup>
-// const { data: page } = await useAsyncData("content", () =>
-//   queryContent("/mentions-legales").findOne()
-// );
+<script setup lang="ts">
+const { data: home } = await useAsyncData(() => queryCollection('content').path('/').first())
+
+useSeoMeta({
+  title: home.value?.title,
+  description: home.value?.description
+})
 </script>
 
 <template>
-  <div>
-    <h1>Mentions légales</h1>
-   
-  </div>
+  <ContentRenderer v-if="home" :value="home" />
+  <div v-else>Home not found</div>
 </template>

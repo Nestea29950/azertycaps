@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     "@nuxtjs/robots",
     '@nuxtjs/sitemap',
     "nuxt-schema-org",
-    '@nuxt/content',
+    "@nuxt/content",
   ],
   supabase: {
     redirect: false,
