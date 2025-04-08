@@ -1,6 +1,7 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
+  
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
@@ -9,6 +10,7 @@ export default defineNuxtConfig({
     "@nuxtjs/robots",
     '@nuxtjs/sitemap',
     "nuxt-schema-org",
+    '@nuxt/content',
   ],
   supabase: {
     redirect: false,
@@ -18,6 +20,7 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
+  
   
   
   
