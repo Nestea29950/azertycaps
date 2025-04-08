@@ -1,3 +1,5 @@
+<script setup>
+</script>
 <template>
   <footer class="bg-white rounded-lg m-4 dark:bg-gray-800">
     <div
@@ -21,12 +23,20 @@
                 Contact
             </NuxtLink>
         </li>
+        <li>
+            <a href="/sitemap.xml" class="hover:underline">
+                Plan du site
+            </a>
+        </li>
+        <li>
+            <NuxtLink to="/mentions-legales" class="hover:underline">
+              Mentions légales
+            </NuxtLink>
+        </li>
+        
         
       </ul>
     </div>
   </footer>
 </template>
 
-
-<script setup>
-</script>

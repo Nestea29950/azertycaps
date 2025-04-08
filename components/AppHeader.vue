@@ -6,8 +6,8 @@
       >
         <NuxtLink to="/" class="flex items-center flex-auto">
           <img
-            src="https://flowbite.com/docs/images/logo.svg"
-            class="mr-3 h-6 sm:h-9"
+            src="../assets/images/logo.svg"
+            class="mr-3 h-12 "
             alt="ClavierAzerty logo"
           />
         </NuxtLink>
