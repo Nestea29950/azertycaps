@@ -4,7 +4,7 @@ description: "Ceci est un exemple d'article de blog utilisant Nuxt Content. Nous
 date: "09-04-2025"
 author: "William"
 categorie : "Tutorial"
-idarticle : 1 
+slug : "mon-premier-article-de-blog"
 ---
 
 # Bienvenue sur Mon Blog

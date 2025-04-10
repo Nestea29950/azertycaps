@@ -1,3 +1,31 @@
+<script setup>
+useHead({
+  title: 'Contact - Keycaps Azerty - Partagez vos Trouvailles de Claviers Mécaniques Français ISO',
+  meta: [
+    { name: 'description', content: 'Envoyez-nous vos liens de claviers mécaniques Azerty que vous avez trouvés sur Amazon, AliExpress ou ailleurs. Aidez-nous à enrichir notre catalogue.' },
+    { name: 'keywords', content: 'contact, keycaps Azerty, claviers mécaniques, envoyer un lien, personnalisation clavier, clavier français ISO' },
+    { name: 'robots', content: 'index, follow' },
+    { name: 'author', content: 'azertycaps.fr' }
+  ]
+});
+
+let email = ref('');
+let lien = ref('');
+let message = ref('');
+const sent = ref(false)
+
+const sendMessage = async () => {
+  await $fetch('/api/contact', {
+    method: 'POST',
+    body: { email: email.value, lien: lien.value, message: message.value }
+  })
+  sent.value = true
+  nom.value = ''
+  email.value = ''
+  message.value = ''
+}
+</script>
+
 <template>
 <section class="bg-white dark:bg-gray-900">
   <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
@@ -22,20 +50,3 @@
 </section>
 </template>
 
-<script setup>
-let email = ref('');
-let lien = ref('');
-let message = ref('');
-const sent = ref(false)
-
-const sendMessage = async () => {
-  await $fetch('/api/contact', {
-    method: 'POST',
-    body: { email: email.value, lien: lien.value, message: message.value }
-  })
-  sent.value = true
-  nom.value = ''
-  email.value = ''
-  message.value = ''
-}
-</script>

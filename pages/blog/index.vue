@@ -1,8 +1,18 @@
 <script setup>
+
+useHead({
+  title: 'Blog - Keycaps Azerty - Conseils et Actualités sur les Claviers Mécaniques Français ISO',
+  meta: [
+    { name: 'description', content: 'Découvrez nos articles sur les keycaps Azerty, les claviers mécaniques français ISO, et des conseils pour personnaliser votre matériel informatique.' },
+    { name: 'keywords', content: 'blog keycaps Azerty, articles clavier mécanique, blog claviers ISO, personnalisation clavier mécanique, news claviers mécaniques' },
+    { name: 'robots', content: 'index, follow' },
+    { name: 'author', content: 'azertycaps.fr' }
+]
+});
+
+
 const { data: articles } = await useAsyncData('blog', () => queryCollection('blog').all())
 
-
-console.log(articles.value)
 
 </script>
 
@@ -25,8 +35,8 @@ console.log(articles.value)
             <span class="text-sm">{{ new Date(article.date.split('-').reverse().join('-')).toLocaleDateString() }}</span>
 
           </div>
-          <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white cursor-pointer">
-            <NuxtLink :to="'blog/' + article.id">{{ article.title }}</NuxtLink>
+          <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white cursor-pointer ">
+            <NuxtLink class="fancy-link" :to="'blog/' + article.slug" >{{ article.title }}</NuxtLink>
           </h2>
           <p class="mb-5 font-light text-gray-500 dark:text-gray-400">{{ article.description }}</p>
           <div class="flex justify-between items-center">
@@ -34,7 +44,7 @@ console.log(articles.value)
               <img class="w-7 h-7 rounded-full" src="../../assets/blog/author.png" alt="William Gaonarc'h Avatar" />
               <span class="font-medium dark:text-white">{{ article.author }}</span>
             </div>
-            <NuxtLink :to="article._path" class="cursor-pointer inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline">
+            <NuxtLink :to="'blog/' + article.slug" class="cursor-pointer inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline ">
               En savoir plus 
               <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>

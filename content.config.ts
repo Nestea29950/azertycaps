@@ -9,7 +9,7 @@ export default defineContentConfig({
         date: z.string(),
         categorie: z.string(),
         author: z.string(),
-        idarticle: z.string(),
+        slug: z.string(),
       })
     }),
     content: defineCollection({
