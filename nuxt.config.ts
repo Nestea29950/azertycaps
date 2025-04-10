@@ -19,13 +19,6 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
-  routeRules: {
-    '/**': { isr: 60 },
-    '/static': { isr: true },
-    '/prerendered': { prerender: true },
-    '/dynamic': { isr: false },
-  },
   
-  
-  
+
 });
