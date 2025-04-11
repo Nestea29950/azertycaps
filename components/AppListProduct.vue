@@ -185,9 +185,9 @@ const selectedFormats = ref([]);
         <div
           v-for="clavier in filteredList"
           :key="clavier.id"
-          class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
+          class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800 "
         >
-          <div class="h-56 w-full justify-center flex items-center">
+          <div class="h-56 w-full justify-center flex items-center ">
             <a :href="clavier.url" aria-label="Lien vers le clavier">
               <img class="" :src="clavier.image_url" alt="" />
             </a>
@@ -234,7 +234,7 @@ const selectedFormats = ref([]);
                 </p>
               </li>
 
-              <li class="flex items-center gap-1">
+              <li class="flex items-center gap-1 ">
                 <svg
                   class="w-6 h-6 text-gray-500 dark:text-white"
                   aria-hidden="true"
@@ -291,7 +291,7 @@ const selectedFormats = ref([]);
               </li>
             </ul>
 
-            <div class="mt-4 flex items-center justify-between gap-4">
+            <div class="mt-4 flex items-center justify-between gap-4 ">
               <p
                 class="text-2xl font-extrabold leading-tight text-gray-900 dark:text-white"
               >
@@ -320,7 +320,7 @@ const selectedFormats = ref([]);
                     d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
                   />
                 </svg>
-                Acheter
+                Découvrir
               </a>
             </div>
           </div>
