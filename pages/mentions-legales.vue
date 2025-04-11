@@ -19,7 +19,7 @@ useSeoMeta({
               {{ mentionsLegales?.title }}
             </h1>
           </header>
-          <div class="text-gray-700">
+          <div class="text-gray-700 lead">
             <ContentRenderer v-if="mentionsLegales" :value="mentionsLegales" />
           </div>
 
@@ -30,9 +30,6 @@ useSeoMeta({
   
 
 <style>
-/* Peut être dans un fichier global, ou dans ton composant */
-.format {
-  white-space: pre-line;
-}
+
 
 </style>
