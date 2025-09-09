@@ -119,7 +119,7 @@ const selectedMateriaux = ref([]);
 const selectedFormats = ref([]);
 </script>
 <template>
-  <section class="py-8 antialiased dark:bg-gray-900 md:py-12">
+  <section class="py-8 antialiased  md:py-12">
     <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
       <!-- Heading & Filters -->
       <div
@@ -127,7 +127,7 @@ const selectedFormats = ref([]);
       >
         <div>
           <h1
-            class="mt-3 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl"
+            class="mt-3 text-xl font-semibold text-gray-900  sm:text-2xl"
           >
             Keycaps français
           </h1>
@@ -138,7 +138,7 @@ const selectedFormats = ref([]);
             @click="filterModal = true"
             data-modal-target="filterModal"
             type="button"
-            class="cursor-pointer flex w-full items-center justify-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 sm:w-auto"
+            class="cursor-pointer flex w-full items-center justify-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100  sm:w-auto"
           >
             <svg
               class="-ms-0.5 me-2 h-4 w-4"
@@ -185,7 +185,7 @@ const selectedFormats = ref([]);
         <div
           v-for="clavier in filteredList"
           :key="clavier.id"
-          class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800 "
+          class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm  "
         >
           <div class="h-56 w-full justify-center flex items-center ">
             <a :href="clavier.url" aria-label="Lien vers le clavier">
@@ -195,17 +195,17 @@ const selectedFormats = ref([]);
           <div class="pt-4">
             <a
               :href="clavier.url"
-              class="text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-white fancy-link" aria-label="Lien vers le clavier"
+              class="text-lg font-semibold leading-tight text-gray-900 hover:underline  fancy-link" aria-label="Lien vers le clavier"
               >{{ clavier.nom }}</a
             >
 
             <div class="mt-2 flex items-center gap-2">
               <AppStarRating :rating="clavier.etoiles" />
 
-              <p class="text-sm font-medium text-gray-900 dark:text-white">
+              <p class="text-sm font-medium text-gray-900 ">
                 {{ clavier.etoiles }}
               </p>
-              <p class="text-sm font-medium text-gray-500 dark:text-gray-400">
+              <p class="text-sm font-medium text-gray-500 ">
                 {{ clavier.avis }} avis
               </p>
             </div>
@@ -213,7 +213,7 @@ const selectedFormats = ref([]);
             <ul class="mt-2 flex items-center gap-4">
               <li class="flex items-center gap-1">
                 <svg
-                  class="w-6 h-6 text-gray-500 dark:text-white"
+                  class="w-6 h-6 text-gray-500 "
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -229,14 +229,14 @@ const selectedFormats = ref([]);
                   />
                 </svg>
 
-                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">
+                <p class="text-sm font-medium text-gray-500 ">
                   {{ clavier.hauteur }}
                 </p>
               </li>
 
               <li class="flex items-center gap-1 ">
                 <svg
-                  class="w-6 h-6 text-gray-500 dark:text-white"
+                  class="w-6 h-6 text-gray-500 "
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -252,14 +252,14 @@ const selectedFormats = ref([]);
                   />
                 </svg>
 
-                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">
+                <p class="text-sm font-medium text-gray-500 ">
                   {{ clavier.materiaux }}
                 </p>
               </li>
 
               <li class="flex items-center gap-1">
                 <svg
-                  class="w-6 h-6 text-gray-500 dark:text-white"
+                  class="w-6 h-6 text-gray-500 "
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -285,7 +285,7 @@ const selectedFormats = ref([]);
                   />
                 </svg>
 
-                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">
+                <p class="text-sm font-medium text-gray-500 0">
                   {{ clavier.format }}
                 </p>
               </li>
@@ -293,7 +293,7 @@ const selectedFormats = ref([]);
 
             <div class="mt-4 flex items-center justify-between gap-4 ">
               <p
-                class="text-2xl font-extrabold leading-tight text-gray-900 dark:text-white"
+                class="text-2xl font-extrabold leading-tight text-gray-900 e"
               >
                 {{ clavier.prix }} €
               </p>
@@ -301,7 +301,7 @@ const selectedFormats = ref([]);
               <a
                 :href="clavier.url" aria-label="Lien vers le clavier"
                 type="button"
-                class="cursor-pointer inline-flex items-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white bg-slate-600 hover:bg-white hover:text-slate-500 border hover:border-slate-500 dark:bg-primary-600 dark:hover:bg-primary-700"
+                class="cursor-pointer inline-flex items-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white bg-slate-600 hover:bg-white hover:text-slate-500 border hover:border-slate-500 :bg-primary-600"
               >
                 <svg
                   class="-ms-2 me-2 h-5 w-5"
@@ -329,7 +329,7 @@ const selectedFormats = ref([]);
       <!-- <div class="w-full text-center">
         <button
           type="button"
-          class="cursor-pointer rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
+          class="cursor-pointer rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100"
         >
           En voir plus
         </button>
@@ -345,13 +345,13 @@ const selectedFormats = ref([]);
     >
       <div class="relative h-full w-full md:h-auto">
         <!-- Modal content -->
-        <div class="relative rounded-lg bg-white shadow dark:bg-gray-800">
+        <div class="relative rounded-lg bg-white shadow">
           <!-- Modal header -->
           <div class="flex items-start justify-between rounded-t p-4 md:p-5">
             <button
               @click="closeModalFilter()"
               type="button"
-              class="cursor-pointer ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
+              class="cursor-pointer ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-100 hover:text-gray-900 "
               data-modal-toggle="filterModal"
             >
               <svg
@@ -387,7 +387,7 @@ const selectedFormats = ref([]);
                   <div>
                     <label
                       for="min-price"
-                      class="block text-sm font-medium text-gray-900 dark:text-white"
+                      class="block text-sm font-medium text-gray-900 "
                     >
                       Prix min
                     </label>
@@ -397,7 +397,7 @@ const selectedFormats = ref([]);
                       v-model="minPrice"
                       :min="minPriceValue"
                       :max="maxPriceValue"
-                      class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                      class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 "
                       placeholder=""
                       required
                     />
@@ -406,7 +406,7 @@ const selectedFormats = ref([]);
                   <div>
                     <label
                       for="max-price"
-                      class="block text-sm font-medium text-gray-900 dark:text-white"
+                      class="block text-sm font-medium text-gray-900 "
                     >
                       Prix Max
                     </label>
@@ -416,7 +416,7 @@ const selectedFormats = ref([]);
                       v-model="maxPrice"
                       :min="minPriceValue"
                       :max="maxPriceValue"
-                      class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                      class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
                       placeholder=""
                       required
                     />
@@ -427,7 +427,7 @@ const selectedFormats = ref([]);
               <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
                 <div>
                   <h6
-                    class="mb-2 text-sm font-medium text-black dark:text-white"
+                    class="mb-2 text-sm font-medium text-black "
                   >
                     Hauteur
                   </h6>
@@ -440,10 +440,10 @@ const selectedFormats = ref([]);
                       v-model="selectedHauteurs"
                       type="checkbox"
                       :value="hauteur"
-                      class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
+                      class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 "
                     />
                     <label
-                      class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                      class="ml-2 text-sm font-medium text-gray-900 "
                     >
                       {{ hauteur }}
                     </label>
@@ -452,7 +452,7 @@ const selectedFormats = ref([]);
 
                 <div>
                   <h6
-                    class="mb-2 text-sm font-medium text-black dark:text-white"
+                    class="mb-2 text-sm font-medium text-black "
                   >
                     Matériaux
                   </h6>
@@ -465,10 +465,10 @@ const selectedFormats = ref([]);
                       v-model="selectedMateriaux"
                       type="checkbox"
                       :value="materiaux"
-                      class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
+                      class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 "
                     />
                     <label
-                      class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                      class="ml-2 text-sm font-medium text-gray-900 "
                     >
                       {{ materiaux }}
                     </label>
@@ -477,7 +477,7 @@ const selectedFormats = ref([]);
 
                 <div>
                   <h6
-                    class="mb-2 text-sm font-medium text-black dark:text-white"
+                    class="mb-2 text-sm font-medium text-black "
                   >
                     Format
                   </h6>
@@ -490,10 +490,10 @@ const selectedFormats = ref([]);
                       v-model="selectedFormats"
                       type="checkbox"
                       :value="format"
-                      class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
+                      class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 "
                     />
                     <label
-                      class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                      class="ml-2 text-sm font-medium text-gray-900 "
                     >
                       {{ format }}
                     </label>
@@ -502,7 +502,7 @@ const selectedFormats = ref([]);
               </div>
             </div>
             <div>
-                <h6 class="my-2 text-sm font-medium text-black dark:text-white">Couleurs</h6>
+                <h6 class="my-2 text-sm font-medium text-black ">Couleurs</h6>
                 <div class="space-y-2">
                   
                   <div
@@ -515,11 +515,11 @@ const selectedFormats = ref([]);
                       :id="'color-' + couleur.id"
                       v-model="selectedCouleurs"
                       :value="couleur.id"
-                      class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
+                      class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 "
                     />
                     <label
                       :for="'color-' + couleur.id"
-                      class="ml-2 flex items-center text-sm font-medium text-gray-900 dark:text-gray-300"
+                      class="ml-2 flex items-center text-sm font-medium text-gray-900 "
                     >
                       <div
                         class="mr-2 h-3.5 w-3.5 rounded-full"
@@ -536,7 +536,7 @@ const selectedFormats = ref([]);
 
           <!-- Modal footer -->
           <div
-            class="flex items-center space-x-4 rounded-b p-4 dark:border-gray-600 md:p-5"
+            class="flex items-center space-x-4 rounded-b p-4  md:p-5"
           ></div>
         </div>
       </div>

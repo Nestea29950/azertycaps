@@ -21,6 +21,12 @@ export default defineNuxtConfig({
   supabase: {
     redirect: false,
   },
+sitemap: {
+    sources: [
+      '/api/__sitemap__/blog'
+    ]
+  },
+
   vite: {
     plugins: [
       tailwindcss(),
