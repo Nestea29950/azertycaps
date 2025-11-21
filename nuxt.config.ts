@@ -7,14 +7,17 @@ export default defineNuxtConfig({
     head: {
       htmlAttrs: {
         lang: 'fr',
+        
       },
+      
     }
   },
+
+
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
   modules: [
     '@nuxtjs/supabase',
-    "@nuxtjs/robots",
     '@nuxtjs/sitemap',
     "nuxt-schema-org",
     "@nuxt/content",

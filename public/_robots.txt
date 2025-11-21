@@ -1,6 +1,6 @@
 # Autoriser tous les robots à explorer toutes les pages
 User-agent: *
-Disallow: /api/*
+Allow: /
 
 # Sitemap du site
 Sitemap: https://azertycaps.fr/sitemap.xml
