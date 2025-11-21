@@ -7,6 +7,7 @@ const activeSubmenu = ref<number | null>(null)
 // Exemple de structure de menu (au cas où tu en ajoutes plus tard)
 const menuItems = ref([
   { label: 'Blog', link: '/blog'},
+  { label: 'Faq', link: '/faq'},
 ])
 
 // ✅ Ouvre/ferme le menu mobile
@@ -92,7 +93,7 @@ onBeforeUnmount(() => {
 
         >
           <ul
-            class="h-svh md:h-auto flex flex-col mt-4 font-medium relative md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white"
+            class="w-full items-center md:justify-center h-svh md:h-auto flex flex-col mt-4 font-medium relative md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white"
           >
             <li class="relative" v-for="(item, index) in menuItems" :key="index">
               <a
@@ -136,7 +137,7 @@ onBeforeUnmount(() => {
             <!-- Bouton contact pour mobile -->
             <a
               href="/contact"
-              class="absolute md:hidden left-0 bottom-24 flex justify-center w-full text-white bg-primary hover:bg-primary-hover focus:ring-4 focus:outline-none font-medium text-sm px-4 py-3 text-center cursor-pointer"
+              class="absolute left-1/2 transform -translate-x-1/2 md:hidden  w-fit bottom-24 flex justify-center  text-white bg-primary hover:bg-primary-hover focus:ring-4 focus:outline-none font-medium text-sm px-4 py-3 text-center cursor-pointer"
             >
               Nous contacter
             </a>

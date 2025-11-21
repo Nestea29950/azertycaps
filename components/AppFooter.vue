@@ -25,9 +25,7 @@ const items_footer = ref([
     <!-- Logo + Réseaux -->
     <div class="flex flex-col sm:flex-row w-full justify-around gap-4">
       <div class="flex justify-center items-center sm:flex-1 gap-4">
-        <a href="/" class="flex items-center space-x-3">
-          <img src="../assets/images/logo.svg" class="w-18" alt="logo portfolio">
-        </a>
+        
 
         <ul class="flex flex-row gap-4">
           <li v-for="social in items_socials" :key="social.label">

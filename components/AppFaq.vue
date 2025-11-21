@@ -1,77 +1,66 @@
-<script setup>
-</script>
-
 <template>
-<section class="bg-white dark:bg-gray-900">
-  <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-      <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Questions fréquentes sur les keycaps ISO FR</h2>
-      <div class="grid pt-8 text-left border-t border-gray-200 md:gap-16 dark:border-gray-700 md:grid-cols-2">
-          
-          <!-- Colonne 1 -->
-          <div>
-              <div class="mb-10">
-                  <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
-                      <svg class="flex-shrink-0 mr-2 w-5 h-5 text-primary dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
-                      Qu’est-ce que des keycaps ISO FR ?
-                  </h3>
-                  <p class="text-primary dark:text-gray-400">Les <strong>keycaps ISO FR</strong> sont des touches de clavier spécialement conçues pour les claviers mécaniques au format ISO avec disposition AZERTY française. Elles incluent les touches spécifiques comme Entrée verticale, é è ç à, et le placement français des symboles.</p>
-              </div>
-              <div class="mb-10">                        
-                  <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
-                      <svg class="flex-shrink-0 mr-2 w-5 h-5 text-primary dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
-                      Les keycaps ISO FR sont-elles compatibles avec tous les claviers mécaniques ?
-                  </h3>
-                  <p class="text-primary dark:text-gray-400">La compatibilité dépend du profil des touches (OEM, Cherry, SA…), du layout (ISO FR vs ISO UK vs ANSI), et du type de switch (MX, Optical, etc.). Vérifiez toujours que votre clavier utilise des switches MX-style si vous commandez sur AliExpress.</p>
-              </div>
-              <div class="mb-10">
-                  <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
-                      <svg class="flex-shrink-0 mr-2 w-5 h-5 text-primary dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
-                      Où acheter des keycaps ISO FR au meilleur prix ?
-                  </h3>
-                  <p class="text-primary dark:text-gray-400">Les meilleurs prix se trouvent souvent sur <strong>AliExpress</strong>, où l’on trouve des sets PBT de haute qualité pour les claviers mécaniques ISO FR. Certains vendeurs proposent également des profils OEM/Cherry avec légendes françaises complètes.</p>
-              </div>
-              <div class="mb-10">
-                  <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
-                      <svg class="flex-shrink-0 mr-2 w-5 h-5 text-primary dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
-                      Quelle est la différence entre PBT et ABS ?
-                  </h3>
-                  <p class="text-primary dark:text-gray-400"><strong>PBT :</strong> plus durable, résistant à la brillance, texture premium.<br/><strong>ABS :</strong> moins cher, plus lisse, tendance à briller avec le temps. Pour un usage intensif, les keycaps PBT sont recommandés.</p>
-              </div>
-          </div>
-
-          <!-- Colonne 2 -->
-          <div>
-              <div class="mb-10">
-                  <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
-                      <svg class="flex-shrink-0 mr-2 w-5 h-5 text-primary dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
-                      Comment savoir si mes keycaps ISO FR sont compatibles RGB ?
-                  </h3>
-                  <p class="text-primary dark:text-gray-400">La compatibilité dépend du type de légendes : <strong>shine-through (translucides)</strong> → parfait pour RGB. <strong>PBT dye-sub</strong> → pas translucides mais qualité supérieure. Vérifiez si le set est indiqué comme “shine-through”.</p>
-              </div>
-              <div class="mb-10">
-                  <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
-                      <svg class="flex-shrink-0 mr-2 w-5 h-5 text-primary dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
-                      Puis-je installer des keycaps ISO FR sur un clavier ANSI ?
-                  </h3>
-                  <p class="text-primary dark:text-gray-400">Non. Les dispositions sont différentes : Entrée, Shift gauche, touches Alt/Ctrl et touches accentuées françaises. Un clavier ANSI ne peut pas devenir ISO FR simplement en changeant les keycaps.</p>
-              </div>
-              <div class="mb-10">
-                  <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
-                      <svg class="flex-shrink-0 mr-2 w-5 h-5 text-primary dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
-                      Quel profil de keycaps choisir (OEM, Cherry, SA, DSA) ?
-                  </h3>
-                  <p class="text-primary dark:text-gray-400"><strong>Cherry :</strong> bas, confortable pour la dactylo<br/><strong>OEM :</strong> standard, polyvalent<br/><strong>SA :</strong> haut, rétro gamer<br/><strong>DSA :</strong> plat, uniforme<br/>Le profil Cherry est le plus populaire pour les keycaps ISO FR.</p>
-              </div>
-              <div class="mb-10">
-                  <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
-                      <svg class="flex-shrink-0 mr-2 w-5 h-5 text-primary dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
-                      Comment installer un set de keycaps ISO FR ?
-                  </h3>
-                  <p class="text-primary dark:text-gray-400">Utilisez un keycap puller. Retirez les touches existantes une par une, installez les nouvelles en respectant la disposition ISO FR et vérifiez la taille des touches : Shift, Entrée, Backspace. Installation rapide, même pour débutant.</p>
-              </div>
-          </div>
-
+  <section>
+    <div
+      v-for="(item, index) in faq"
+      :key="index"
+      class="border-b border-slate-200"
+    >
+      <button
+        @click="toggleAccordion(index)"
+        class="w-full flex justify-between items-center py-5 text-primary cursor-pointer"
+      >
+        <span>{{ item.question }}</span>
+        <span
+          :id="`icon-${index}`"
+          class="text-primary transition-transform duration-300"
+          v-html="item.icon"
+        ></span>
+      </button>
+      <div
+        :id="`content-${index}`"
+        class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+      >
+        <div class="pb-5 text-sm text-slate-500">
+          {{ item.answer }}
+        </div>
       </div>
-  </div>
-</section>
+    </div>
+  </section>
 </template>
+
+<script setup>
+import { ref } from 'vue';
+
+const plusSVG = `
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+    <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
+  </svg>
+`;
+
+const minusSVG = `
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+    <path d="M3.75 7.25a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z" />
+  </svg>
+`;
+
+const faq = ref([
+  { question: "Qu’est-ce qu’un keycap ISO FR ?", answer: "Les keycaps ISO FR sont des touches de clavier conformes au layout français ISO (AZERTY), idéales pour personnaliser votre clavier mécanique.", icon: plusSVG },
+  { question: "Pourquoi choisir des keycaps ISO French pour mon clavier ?", answer: "Ils offrent une compatibilité parfaite avec les claviers AZERTY et permettent de profiter d’un confort de frappe adapté à la disposition française.", icon: plusSVG },
+  { question: "Quels matériaux de keycaps ISO FR sont disponibles ?", answer: "Les plus populaires sont le PBT, durable et mat, et l’ABS, lisse et économique. Le PBT est recommandé pour une utilisation longue durée.", icon: plusSVG },
+  { question: "Quels profils de keycaps ISO FR choisir : Cherry, OEM, SA ou DSA ?", answer: "Cherry et OEM sont standards et ergonomiques, SA est haut et rétro, DSA est plat et uniforme, idéal pour la frappe rapide.", icon: plusSVG },
+  { question: "Les keycaps ISO FR sont-ils compatibles avec tous les claviers mécaniques ?", answer: "Oui, ils fonctionnent avec la plupart des switchs MX (Cherry, Gateron, Kailh…), mais vérifiez la compatibilité avec certains claviers low-profile ou layouts spéciaux.", icon: plusSVG }
+]);
+
+function toggleAccordion(index) {
+  const content = document.getElementById(`content-${index}`);
+  const icon = document.getElementById(`icon-${index}`);
+
+  if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+    content.style.maxHeight = "0";
+    faq.value[index].icon = plusSVG;
+  } else {
+    content.style.maxHeight = content.scrollHeight + "px";
+    faq.value[index].icon = minusSVG;
+  }
+}
+</script>

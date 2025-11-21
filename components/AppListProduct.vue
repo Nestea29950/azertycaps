@@ -14,8 +14,8 @@ function closeModalFilter() {
 
 const allCouleurs = computed(() => {
   // Récupère tous les objets "couleurs" (via clavier_couleurs)
-  const couleurs = props.ListClavier.flatMap(clavier =>
-    clavier.clavier_couleurs.map(cc => cc.couleurs)
+  const couleurs = props.ListClavier.flatMap((clavier) =>
+    clavier.clavier_couleurs.map((cc) => cc.couleurs)
   );
 
   // Supprime les doublons sur l'ID ou le code
@@ -33,10 +33,7 @@ const allCouleurs = computed(() => {
   return unique;
 });
 
-
-
 const selectedCouleurs = ref([]);
-
 
 const minPrice = ref(0);
 const maxPrice = ref(0);
@@ -98,8 +95,8 @@ const filteredList = computed(() => {
     // Vérifie si les couleurs sélectionnées sont associées à ce clavier
     const hasSelectedCouleur =
       selectedCouleurs.value.length === 0 ||
-      clavier.clavier_couleurs.some(cc =>
-        selectedCouleurs.value.includes(cc.couleurs.id) // on compare par ID ou autre attribut unique
+      clavier.clavier_couleurs.some(
+        (cc) => selectedCouleurs.value.includes(cc.couleurs.id) // on compare par ID ou autre attribut unique
       );
 
     return (
@@ -112,37 +109,38 @@ const filteredList = computed(() => {
   });
 });
 
-
 // Liste des hauteurs, matériaux, formats sélectionnés par l'utilisateur
 const selectedHauteurs = ref([]);
 const selectedMateriaux = ref([]);
 const selectedFormats = ref([]);
 </script>
 <template>
-  <section class=" antialiased ">
-    <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
+  <section class="antialiased">
+    <div class="mx-auto max-w-screen-xl  2xl:px-0">
       <div>
-          <h1 class="mt-3 text-xl font-semibold text-primary sm:text-2xl">
-            Keycaps ISO FR : Sélection de Keycaps AZERTY pour Claviers Mécaniques
-          </h1>
-          <p>
-            Découvrez une sélection complète de keycaps ISO FR pour claviers mécaniques AZERTY. Que vous cherchiez des keycaps en PBT, en ABS, au profil OEM, Cherry ou SA, nous regroupons les meilleurs modèles disponibles en France et sur AliExpress. Notre objectif : vous aider à trouver facilement des keycaps ISO FR de qualité, compatibles avec votre setup, au meilleur prix.
-          </p>
-
-        </div>
+        <h1 class="mt-3 text-xl font-semibold text-primary sm:text-2xl">
+          Keycaps ISO FR : Sélection de Keycaps AZERTY pour Claviers Mécaniques
+        </h1>
+        <p>
+          Découvrez une sélection complète de keycaps ISO FR pour claviers
+          mécaniques AZERTY. Que vous cherchiez des keycaps en PBT, en ABS, au
+          profil OEM, Cherry ou SA, nous regroupons les meilleurs modèles
+          disponibles en France et sur AliExpress. Notre objectif : vous aider à
+          trouver facilement des keycaps ISO FR de qualité, compatibles avec
+          votre setup, au meilleur prix.
+        </p>
+      </div>
 
       <div
         class="mb-4 items-end justify-between space-y-4 sm:flex sm:space-y-0 md:mb-8 flex flex-col"
       >
-        
-
         <div class="flex items-center space-x-4">
           <button
             data-modal-toggle="filterModal"
             @click="filterModal = true"
             data-modal-target="filterModal"
             type="button"
-            class="cursor-pointer flex w-full items-center justify-center  border border-primary bg-white px-3 py-2 text-sm font-medium text-primary hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100  sm:w-auto"
+            class="cursor-pointer flex w-full items-center justify-center border border-primary bg-white px-3 py-2 text-sm font-medium text-primary hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 sm:w-auto"
           >
             <svg
               class="-ms-0.5 me-2 h-4 w-4"
@@ -179,8 +177,6 @@ const selectedFormats = ref([]);
               />
             </svg>
           </button>
-          
-  
         </div>
       </div>
       <div
@@ -189,32 +185,35 @@ const selectedFormats = ref([]);
         <div
           v-for="clavier in filteredList"
           :key="clavier.id"
-          class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm  object-contain"
+          class=" border border-gray-200 bg-white p-6 shadow-sm object-contain pt-4 flex flex-col justify-between"
         >
-          <div class="h-56 w-full flex items-center justify-center overflow-hidden rounded-lg">
-  <a :href="clavier.url" aria-label="Lien vers le clavier">
-    <img
-      class="w-full h-full object-cover"
-      :src="clavier.image_url"
-      alt=""
-    />
-  </a>
-</div>
+          <div
+            class="h-56 w-full flex items-center justify-center overflow-hidden "
+          >
+            <a :href="clavier.url" aria-label="Lien vers le clavier">
+              <img
+                class="w-full h-full object-cover"
+                :src="clavier.image_url"
+                alt=""
+              />
+            </a>
+          </div>
 
-          <div class="pt-4">
+          <div class=" mt-4">
             <a
               :href="clavier.url"
-              class="text-lg font-semibold leading-tight text-primary hover:underline  fancy-link" aria-label="Lien vers le clavier"
+              class="text-lg font-semibold leading-tight text-primary hover:underline fancy-link"
+              aria-label="Lien vers le clavier"
               >{{ clavier.nom }}</a
             >
 
             <div class="mt-2 flex items-center gap-1">
               <AppStarRating :rating="clavier.etoiles" />
 
-              <p class="text-sm font-medium text-primary ">
+              <p class="text-sm font-medium text-primary">
                 {{ clavier.etoiles }}
               </p>
-              <p class="text-sm font-medium text-primary ">
+              <p class="text-sm font-medium text-primary">
                 {{ clavier.avis }} avis
               </p>
             </div>
@@ -222,7 +221,7 @@ const selectedFormats = ref([]);
             <ul class="mt-2 flex items-center gap-4">
               <li class="flex items-center gap-1">
                 <svg
-                  class="w-6 h-6 text-primary "
+                  class="w-6 h-6 text-primary"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -238,14 +237,14 @@ const selectedFormats = ref([]);
                   />
                 </svg>
 
-                <p class="text-sm font-medium text-primary ">
+                <p class="text-sm font-medium text-primary">
                   {{ clavier.hauteur }}
                 </p>
               </li>
 
-              <li class="flex items-center gap-1 ">
+              <li class="flex items-center gap-1">
                 <svg
-                  class="w-6 h-6 text-primary "
+                  class="w-6 h-6 text-primary"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -261,14 +260,14 @@ const selectedFormats = ref([]);
                   />
                 </svg>
 
-                <p class="text-sm font-medium text-primary ">
+                <p class="text-sm font-medium text-primary">
                   {{ clavier.materiaux }}
                 </p>
               </li>
 
               <li class="flex items-center gap-1">
                 <svg
-                  class="w-6 h-6 text-primary "
+                  class="w-6 h-6 text-primary"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -300,15 +299,14 @@ const selectedFormats = ref([]);
               </li>
             </ul>
 
-            <div class="mt-4 flex items-center justify-between gap-4 ">
-              <p
-                class="text-2xl font-extrabold leading-tight text-primary "
-              >
+            <div class="mt-4 flex items-center justify-between gap-4">
+              <p class="text-2xl font-extrabold leading-tight text-primary">
                 {{ clavier.prix }} €
               </p>
 
               <a
-                :href="clavier.url" aria-label="Lien vers le clavier"
+                :href="clavier.url"
+                aria-label="Lien vers le clavier"
                 type="button"
                 class="cursor-pointer inline-flex items-center px-5 py-2.5 text-sm font-medium text-white bg-primary hover:bg-white hover:text-primary border hover:border-primary"
               >
@@ -360,7 +358,7 @@ const selectedFormats = ref([]);
             <button
               @click="closeModalFilter()"
               type="button"
-              class="cursor-pointer ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-100 hover:text-primary "
+              class="cursor-pointer ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-100 hover:text-primary"
               data-modal-toggle="filterModal"
             >
               <svg
@@ -396,7 +394,7 @@ const selectedFormats = ref([]);
                   <div>
                     <label
                       for="min-price"
-                      class="block text-sm font-medium text-primary "
+                      class="block text-sm font-medium text-primary"
                     >
                       Prix min
                     </label>
@@ -406,7 +404,7 @@ const selectedFormats = ref([]);
                       v-model="minPrice"
                       :min="minPriceValue"
                       :max="maxPriceValue"
-                      class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-primary focus:border-primary-500 focus:ring-primary-500 "
+                      class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-primary focus:border-primary-500 focus:ring-primary-500"
                       placeholder=""
                       required
                     />
@@ -415,7 +413,7 @@ const selectedFormats = ref([]);
                   <div>
                     <label
                       for="max-price"
-                      class="block text-sm font-medium text-primary "
+                      class="block text-sm font-medium text-primary"
                     >
                       Prix Max
                     </label>
@@ -435,11 +433,7 @@ const selectedFormats = ref([]);
 
               <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
                 <div>
-                  <h6
-                    class="mb-2 text-sm font-medium text-black "
-                  >
-                    Hauteur
-                  </h6>
+                  <h6 class="mb-2 text-sm font-medium text-black">Hauteur</h6>
                   <div
                     class="flex items-center"
                     v-for="hauteur in uniqueHauteurs"
@@ -449,22 +443,16 @@ const selectedFormats = ref([]);
                       v-model="selectedHauteurs"
                       type="checkbox"
                       :value="hauteur"
-                      class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 "
+                      class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500"
                     />
-                    <label
-                      class="ml-2 text-sm font-medium text-primary "
-                    >
+                    <label class="ml-2 text-sm font-medium text-primary">
                       {{ hauteur }}
                     </label>
                   </div>
                 </div>
 
                 <div>
-                  <h6
-                    class="mb-2 text-sm font-medium text-black "
-                  >
-                    Matériaux
-                  </h6>
+                  <h6 class="mb-2 text-sm font-medium text-black">Matériaux</h6>
                   <div
                     class="flex items-center"
                     v-for="materiaux in uniqueMateriaux"
@@ -474,22 +462,16 @@ const selectedFormats = ref([]);
                       v-model="selectedMateriaux"
                       type="checkbox"
                       :value="materiaux"
-                      class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 "
+                      class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500"
                     />
-                    <label
-                      class="ml-2 text-sm font-medium text-primary "
-                    >
+                    <label class="ml-2 text-sm font-medium text-primary">
                       {{ materiaux }}
                     </label>
                   </div>
                 </div>
 
                 <div>
-                  <h6
-                    class="mb-2 text-sm font-medium text-black "
-                  >
-                    Format
-                  </h6>
+                  <h6 class="mb-2 text-sm font-medium text-black">Format</h6>
                   <div
                     class="flex items-center"
                     v-for="format in uniqueFormats"
@@ -499,11 +481,9 @@ const selectedFormats = ref([]);
                       v-model="selectedFormats"
                       type="checkbox"
                       :value="format"
-                      class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 "
+                      class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500"
                     />
-                    <label
-                      class="ml-2 text-sm font-medium text-primary "
-                    >
+                    <label class="ml-2 text-sm font-medium text-primary">
                       {{ format }}
                     </label>
                   </div>
@@ -511,42 +491,37 @@ const selectedFormats = ref([]);
               </div>
             </div>
             <div>
-                <h6 class="my-2 text-sm font-medium text-black ">Couleurs</h6>
-                <div class="space-y-2">
-                  
-                  <div
-                    class="flex items-center"
-                    v-for="couleur in allCouleurs"
-                    :key="couleur.id"
+              <h6 class="my-2 text-sm font-medium text-black">Couleurs</h6>
+              <div class="space-y-2">
+                <div
+                  class="flex items-center"
+                  v-for="couleur in allCouleurs"
+                  :key="couleur.id"
+                >
+                  <input
+                    type="checkbox"
+                    :id="'color-' + couleur.id"
+                    v-model="selectedCouleurs"
+                    :value="couleur.id"
+                    class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500"
+                  />
+                  <label
+                    :for="'color-' + couleur.id"
+                    class="ml-2 flex items-center text-sm font-medium text-primary"
                   >
-                    <input
-                      type="checkbox"
-                      :id="'color-' + couleur.id"
-                      v-model="selectedCouleurs"
-                      :value="couleur.id"
-                      class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 "
-                    />
-                    <label
-                      :for="'color-' + couleur.id"
-                      class="ml-2 flex items-center text-sm font-medium text-primary "
-                    >
-                      <div
-                        class="mr-2 h-3.5 w-3.5 rounded-full"
-                        :style="{ backgroundColor: couleur.code_hex }"
-                      ></div>
-                      {{ couleur.nom}}
-                    </label>
-                  </div>
+                    <div
+                      class="mr-2 h-3.5 w-3.5 rounded-full"
+                      :style="{ backgroundColor: couleur.code_hex }"
+                    ></div>
+                    {{ couleur.nom }}
+                  </label>
                 </div>
-
-
               </div>
+            </div>
           </div>
 
           <!-- Modal footer -->
-          <div
-            class="flex items-center space-x-4 rounded-b p-4  md:p-5"
-          ></div>
+          <div class="flex items-center space-x-4 rounded-b p-4 md:p-5"></div>
         </div>
       </div>
     </form>
