@@ -1,110 +1,155 @@
-<script setup>
-let modalMenu  = ref(false);
+<script setup lang="ts">
 
-function ModalMenu(){
-  console.log(modalMenu);
-  if(modalMenu.value == false){
-    modalMenu.value = true;
-  }
-  else{
-    modalMenu.value = false;
+
+const menuVisible = ref(false)
+const activeSubmenu = ref<number | null>(null)
+
+// Exemple de structure de menu (au cas où tu en ajoutes plus tard)
+const menuItems = ref([
+  { label: 'Blog', link: '/blog'},
+])
+
+// ✅ Ouvre/ferme le menu mobile
+function toggleMenu() {
+  menuVisible.value = !menuVisible.value
+}
+
+// ✅ Ouvre/ferme un sous-menu
+function toggleSubmenu(index: number) {
+  activeSubmenu.value = activeSubmenu.value === index ? null : index
+}
+
+// ✅ Ferme les sous-menus si clic à l’extérieur
+function handleClickOutside(e: MouseEvent) {
+  const target = e.target as HTMLElement
+  if (!target.closest('.has-children')) {
+    activeSubmenu.value = null
   }
 }
+
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside)
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', handleClickOutside)
+})
 </script>
 
 <template>
-  <header>
-    <nav class="bg-white border-gray-200 px-4 lg:px-6 py-4 ">
-      <div
-        class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl"
-      >
-        <NuxtLink to="/" class="flex items-center flex-auto">
+  <header class="pb-18 lg:pb-17">
+    <nav class="bg-white fixed w-full z-20 top-0 start-0 " >
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <!-- Logo -->
+        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse  lg:flex-1 ">
           <img
             src="../assets/images/logo.svg"
-            class="mr-3 h-12 "
-            alt="ClavierAzerty logo"
+            class="w-18"
+            alt="logo portfolio developpeur fullstack"
           />
-        </NuxtLink>
-        <div class="flex items-center lg:order-2 flex-auto justify-end lg:justify-start ">
-          <button 
-            data-collapse-toggle="mobile-menu-2"
-            type="button"
-            class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-            aria-controls="mobile-menu-2"
-            aria-expanded="false"
-             @click="ModalMenu()"
-             
+        </a>
+
+        <!-- Bouton "Nous contacter" + Burger -->
+        <div class="flex justify-end md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse lg:flex-1">
+          <a
+            href="/contact"
+            class="btn-primary px-4 py-2"
           >
-            <span class="sr-only">Ouvrir menu principal</span>
-            <svg v-if="modalMenu == false"
-              class="w-6 h-6"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
+          Me contacter
+          </a>
+
+          <!-- Burger -->
+          <button
+            @click="toggleMenu"
+            type="button"
+            class="inline-flex items-center w-10 h-10 justify-center text-sm md:hidden text-primary focus:outline-none"
+            aria-controls="navbar-cta"
+            :aria-expanded="menuVisible"
+          >
+            <span class="sr-only">Ouvrir le menu principal</span>
             <svg
-            v-if="modalMenu == true"
-            
-              class=" w-6 h-6"
-              fill="currentColor"
-              viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 10 10"
+              stroke="#000000"
+              stroke-width=".6"
+              fill="none"
+              stroke-linecap="round"
+              style="cursor: pointer"
             >
-              <path
-                fill-rule="evenodd"
-                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clip-rule="evenodd"
-              ></path>
+              <path v-if="!menuVisible" d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7" />
+              <path v-else d="M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7" />
             </svg>
           </button>
         </div>
-        <NuxtLink  to="/contact" class="hover:underline lg:order-3 hidden lg:flex lg:items-center py-2 pr-4 pl-3 font-medium text-gray-800 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 "
-                >Contact <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-              </svg></NuxtLink
-          >
-        <div :class="{ hidden : !modalMenu, block : modalMenu }"
-          class=" justify-between block items-center w-full lg:flex lg:w-auto lg:order-1"
-          id="mobile-menu-2"
+
+        <!-- Menu principal -->
+        <div
+          id="navbar-cta"
+          :class="[
+          'lg:flex-1 flex items-center justify-around w-full md:flex md:w-auto md:order-1 transition-all duration-300',
+          menuVisible ? 'block' : 'hidden md:block'
+        ]"
+
         >
           <ul
-            class="flex flex-col mt-4 font-medium lg:flex-row gap-4 lg:mt-0 "
+            class="h-svh md:h-auto flex flex-col mt-4 font-medium relative md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white"
           >
-          <li>
-              <NuxtLink to="/"
-                class="hover:underline block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 "
-                >Accueil</NuxtLink
+            <li class="relative" v-for="(item, index) in menuItems" :key="index">
+              <a
+                :href="item.link "
+                class="flex items-center py-2 md:px-3 text-primary md:bg-transparent md:p-0 text-2xl md:text-base hover:underline"
+                
+                :class="{ 'has-children': item.children }"
               >
-            </li>
-          <li>
-              <NuxtLink to="/blog"
-                class="hover:underline block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 "
-                >Blog</NuxtLink
+                {{ item.label }}
+                <svg
+                  v-if="item.children"
+                  class="w-4 h-4 ml-2 transition-transform"
+                  :class="{ 'rotate-180': activeSubmenu === index }"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </a>
+
+              <!-- Sous-menu -->
+              <ul
+                v-if="item.children"
+                :class="[
+                  'ml-4 mt-2 space-y-2 md:absolute md:ml-0 md:mt-0 md:bg-white md:shadow-md md:rounded-lg md:p-2',
+                  { hidden: activeSubmenu !== index },
+                ]"
               >
+                <li v-for="(child, i) in item.children" :key="i">
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100">{{ child }}</a>
+                </li>
+              </ul>
             </li>
-            <li :class="{ hidden : !modalMenu, block : modalMenu }">
-              <NuxtLink to="/contact"
-                class="hover:underline block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 "
-                >Contact</NuxtLink
-              >
-            </li>
-           
-            
+
+            <!-- Bouton contact pour mobile -->
+            <a
+              href="/contact"
+              class="absolute md:hidden left-0 bottom-24 flex justify-center w-full text-white bg-primary hover:bg-primary-hover focus:ring-4 focus:outline-none font-medium text-sm px-4 py-3 text-center cursor-pointer"
+            >
+              Nous contacter
+            </a>
           </ul>
         </div>
-       
       </div>
-      
     </nav>
   </header>
 </template>
 
+<style scoped>
 
-<script setup>
-</script>
+.rotate-180 {
+  transform: rotate(180deg);
+}
+</style>

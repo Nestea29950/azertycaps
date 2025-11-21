@@ -2,7 +2,7 @@
 const route = useRoute();
 
 const { data: page } = await useAsyncData(() =>
-  queryCollection("content").path("/mentions-legales").first()
+  queryCollection("content").path("/politique-de-confidentialite").first()
 );
 
 useSeoMeta({
@@ -11,7 +11,7 @@ useSeoMeta({
   ogTitle: page.value.title,
   ogDescription: page.value.description,
   ogImage: page.value.image,
-  ogUrl: 'https://azertycaps.fr/mentions-legales',
+  ogUrl: 'https://azertycaps.fr/politique-de-confidentialite',
 })
 
 </script>

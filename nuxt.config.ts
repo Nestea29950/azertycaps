@@ -1,4 +1,5 @@
 import tailwindcss from "@tailwindcss/vite";
+import { globby } from "globby";
 
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
@@ -22,9 +23,25 @@ export default defineNuxtConfig({
     redirect: false,
   },
 sitemap: {
-    sources: [
-      '/api/__sitemap__/blog'
-    ]
+
+    urls: async () => {
+      // Récupère tous les fichiers markdown dans /content
+      const files = await globby("content/**/*.md")
+
+      return files.map((file) => {
+        // Retirer "content" + extension .md
+        let path = file
+          .replace("content", "")
+          .replace(/\.md$/, "");
+
+        // Gestion des index.md
+        if (path.endsWith("/index")) {
+          path = path.replace("/index", "");
+        }
+
+        return path === "" ? "/" : path;
+      })
+    }
   },
 
   vite: {

@@ -19,7 +19,7 @@ const { data: articles } = await useAsyncData('blog', () => queryCollection('blo
 <template>
   <section class="bg-white ">
     
-    <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-lg">
+    <div class="px-4 mx-auto max-w-screen-lg">
       <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
         <h1 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 ">Blog</h1>
       </div>

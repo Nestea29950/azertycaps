@@ -119,26 +119,38 @@ const selectedMateriaux = ref([]);
 const selectedFormats = ref([]);
 </script>
 <template>
-  <section class="py-8 antialiased  md:py-12">
+  <section class=" antialiased ">
     <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
-      <!-- Heading & Filters -->
-      <div
-        class="mb-4 items-end justify-between space-y-4 sm:flex sm:space-y-0 md:mb-8"
-      >
-        <div>
-          <h1
-            class="mt-3 text-xl font-semibold text-gray-900  sm:text-2xl"
-          >
-            Keycaps français
+      <div>
+          <h1 class="mt-3 text-xl font-semibold text-primary sm:text-2xl">
+            Keycaps français pour claviers mécaniques
           </h1>
+          <p>
+            Découvrez notre sélection de touches ISO‑FR (AZERTY) — y compris des sets Aliexpress soigneusement choisis pour trouver les meilleures claviers pas chers sans sacrifier la qualité.
+          </p>
+
         </div>
+
+        <h2 class="mt-6 text-lg font-semibold text-primary sm:text-xl">
+          Pourquoi choisir des keycaps français pour votre clavier mécanique ?
+        </h2>
+        <p>
+          Bienvenue sur AzertyCaps.fr, votre guide pour trouver les meilleures touches de clavier ISO‑FR. Que vous cherchiez des keycaps pour améliorer le confort de frappe, personnaliser votre clavier mécanique, ou découvrir des sets Aliexpress de qualité, nous vous aidons à faire le bon choix.  
+
+          Nos sélections sont régulièrement mises à jour et testées pour leur qualité et leur style. Profitez d'un guide clair, rapide et sans publicité intrusive pour trouver les meilleures touches du moment.
+        </p>
+      <div
+        class="mb-4 items-end justify-between space-y-4 sm:flex sm:space-y-0 md:mb-8 flex flex-col"
+      >
+        
+
         <div class="flex items-center space-x-4">
           <button
             data-modal-toggle="filterModal"
             @click="filterModal = true"
             data-modal-target="filterModal"
             type="button"
-            class="cursor-pointer flex w-full items-center justify-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100  sm:w-auto"
+            class="cursor-pointer flex w-full items-center justify-center  border border-primary bg-white px-3 py-2 text-sm font-medium text-primary hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100  sm:w-auto"
           >
             <svg
               class="-ms-0.5 me-2 h-4 w-4"
@@ -185,27 +197,32 @@ const selectedFormats = ref([]);
         <div
           v-for="clavier in filteredList"
           :key="clavier.id"
-          class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm  "
+          class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm  object-contain"
         >
-          <div class="h-56 w-full justify-center flex items-center ">
-            <a :href="clavier.url" aria-label="Lien vers le clavier">
-              <img class="" :src="clavier.image_url" alt="" />
-            </a>
-          </div>
+          <div class="h-56 w-full flex items-center justify-center overflow-hidden rounded-lg">
+  <a :href="clavier.url" aria-label="Lien vers le clavier">
+    <img
+      class="w-full h-full object-cover"
+      :src="clavier.image_url"
+      alt=""
+    />
+  </a>
+</div>
+
           <div class="pt-4">
             <a
               :href="clavier.url"
-              class="text-lg font-semibold leading-tight text-gray-900 hover:underline  fancy-link" aria-label="Lien vers le clavier"
+              class="text-lg font-semibold leading-tight text-primary hover:underline  fancy-link" aria-label="Lien vers le clavier"
               >{{ clavier.nom }}</a
             >
 
-            <div class="mt-2 flex items-center gap-2">
+            <div class="mt-2 flex items-center gap-1">
               <AppStarRating :rating="clavier.etoiles" />
 
-              <p class="text-sm font-medium text-gray-900 ">
+              <p class="text-sm font-medium text-primary ">
                 {{ clavier.etoiles }}
               </p>
-              <p class="text-sm font-medium text-gray-500 ">
+              <p class="text-sm font-medium text-primary ">
                 {{ clavier.avis }} avis
               </p>
             </div>
@@ -213,7 +230,7 @@ const selectedFormats = ref([]);
             <ul class="mt-2 flex items-center gap-4">
               <li class="flex items-center gap-1">
                 <svg
-                  class="w-6 h-6 text-gray-500 "
+                  class="w-6 h-6 text-primary "
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -229,14 +246,14 @@ const selectedFormats = ref([]);
                   />
                 </svg>
 
-                <p class="text-sm font-medium text-gray-500 ">
+                <p class="text-sm font-medium text-primary ">
                   {{ clavier.hauteur }}
                 </p>
               </li>
 
               <li class="flex items-center gap-1 ">
                 <svg
-                  class="w-6 h-6 text-gray-500 "
+                  class="w-6 h-6 text-primary "
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -252,14 +269,14 @@ const selectedFormats = ref([]);
                   />
                 </svg>
 
-                <p class="text-sm font-medium text-gray-500 ">
+                <p class="text-sm font-medium text-primary ">
                   {{ clavier.materiaux }}
                 </p>
               </li>
 
               <li class="flex items-center gap-1">
                 <svg
-                  class="w-6 h-6 text-gray-500 "
+                  class="w-6 h-6 text-primary "
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -285,7 +302,7 @@ const selectedFormats = ref([]);
                   />
                 </svg>
 
-                <p class="text-sm font-medium text-gray-500 0">
+                <p class="text-sm font-medium text-primary 0">
                   {{ clavier.format }}
                 </p>
               </li>
@@ -293,7 +310,7 @@ const selectedFormats = ref([]);
 
             <div class="mt-4 flex items-center justify-between gap-4 ">
               <p
-                class="text-2xl font-extrabold leading-tight text-gray-900 e"
+                class="text-2xl font-extrabold leading-tight text-primary "
               >
                 {{ clavier.prix }} €
               </p>
@@ -301,7 +318,7 @@ const selectedFormats = ref([]);
               <a
                 :href="clavier.url" aria-label="Lien vers le clavier"
                 type="button"
-                class="cursor-pointer inline-flex items-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white bg-slate-600 hover:bg-white hover:text-slate-500 border hover:border-slate-500 :bg-primary-600"
+                class="cursor-pointer inline-flex items-center px-5 py-2.5 text-sm font-medium text-white bg-primary hover:bg-white hover:text-primary border hover:border-primary"
               >
                 <svg
                   class="-ms-2 me-2 h-5 w-5"
@@ -309,7 +326,7 @@ const selectedFormats = ref([]);
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
-                  fill="none"
+                  fill="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -329,7 +346,7 @@ const selectedFormats = ref([]);
       <!-- <div class="w-full text-center">
         <button
           type="button"
-          class="cursor-pointer rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100"
+          class="cursor-pointer rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-primary hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100"
         >
           En voir plus
         </button>
@@ -351,7 +368,7 @@ const selectedFormats = ref([]);
             <button
               @click="closeModalFilter()"
               type="button"
-              class="cursor-pointer ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-100 hover:text-gray-900 "
+              class="cursor-pointer ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-100 hover:text-primary "
               data-modal-toggle="filterModal"
             >
               <svg
@@ -387,7 +404,7 @@ const selectedFormats = ref([]);
                   <div>
                     <label
                       for="min-price"
-                      class="block text-sm font-medium text-gray-900 "
+                      class="block text-sm font-medium text-primary "
                     >
                       Prix min
                     </label>
@@ -397,7 +414,7 @@ const selectedFormats = ref([]);
                       v-model="minPrice"
                       :min="minPriceValue"
                       :max="maxPriceValue"
-                      class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 "
+                      class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-primary focus:border-primary-500 focus:ring-primary-500 "
                       placeholder=""
                       required
                     />
@@ -406,7 +423,7 @@ const selectedFormats = ref([]);
                   <div>
                     <label
                       for="max-price"
-                      class="block text-sm font-medium text-gray-900 "
+                      class="block text-sm font-medium text-primary "
                     >
                       Prix Max
                     </label>
@@ -416,7 +433,7 @@ const selectedFormats = ref([]);
                       v-model="maxPrice"
                       :min="minPriceValue"
                       :max="maxPriceValue"
-                      class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+                      class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-primary focus:border-primary-500 focus:ring-primary-500"
                       placeholder=""
                       required
                     />
@@ -443,7 +460,7 @@ const selectedFormats = ref([]);
                       class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 "
                     />
                     <label
-                      class="ml-2 text-sm font-medium text-gray-900 "
+                      class="ml-2 text-sm font-medium text-primary "
                     >
                       {{ hauteur }}
                     </label>
@@ -468,7 +485,7 @@ const selectedFormats = ref([]);
                       class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 "
                     />
                     <label
-                      class="ml-2 text-sm font-medium text-gray-900 "
+                      class="ml-2 text-sm font-medium text-primary "
                     >
                       {{ materiaux }}
                     </label>
@@ -493,7 +510,7 @@ const selectedFormats = ref([]);
                       class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 "
                     />
                     <label
-                      class="ml-2 text-sm font-medium text-gray-900 "
+                      class="ml-2 text-sm font-medium text-primary "
                     >
                       {{ format }}
                     </label>
@@ -519,7 +536,7 @@ const selectedFormats = ref([]);
                     />
                     <label
                       :for="'color-' + couleur.id"
-                      class="ml-2 flex items-center text-sm font-medium text-gray-900 "
+                      class="ml-2 flex items-center text-sm font-medium text-primary "
                     >
                       <div
                         class="mr-2 h-3.5 w-3.5 rounded-full"

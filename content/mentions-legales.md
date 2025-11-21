@@ -1,44 +1,89 @@
 ---
-title: Mentions Légales
-description: Informations légales concernant ce site web.
+title: "Mentions Légales"
+description: "Mentions légales du site AzertyCaps.fr, boutique en ligne de keycaps français pour claviers mécaniques."
 ---
 
-<strong>Nom de l'entreprise :</strong> GAONARC'H WILLIAM  
-<strong>Email :</strong> [Votre Email]  
-<strong>Numéro de SIRET :</strong> 89187853000015  
-<strong>Numéro TVA intracommunautaire :</strong> FR18891878530  
-<strong>Forme juridique :</strong> Entrepreneur individuel  
+Dernière mise à jour : 21/11/2025
 
-## Hébergement
+Le présent document décrit les informations légales concernant le site **AzertyCaps.fr**, spécialisé dans la vente et la sélection de keycaps français pour claviers mécaniques.
 
-<strong>Nom de l'hébergeur :</strong> Netlify  
-<strong>Adresse de l'hébergeur :</strong> Netlify, Inc., 44 Montgomery Street, Suite 300, San Francisco, California 94104, États-Unis  
-<strong>Site web :</strong> [https://www.netlify.com](https://www.netlify.com)  
+---
 
-## Propriété Intellectuelle
+## 1. Éditeur du site
 
-L'ensemble du contenu du site (textes, images, graphismes, logo, vidéos, structure générale, etc.) est la propriété exclusive de GAONARC'H WILLIAM, sauf mention contraire.  
-Toute reproduction, représentation, modification, publication ou adaptation, totale ou partielle, des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable.  
+**AzertyCaps.fr**  
+Propriétaire : William Gaonarch  
+Développeur & Responsable du site : [williamgaonarch.fr](https://williamgaonarch.fr)  
+Paris, France  
+Email : willgaonarch@hotmail.fr  
 
-## Responsabilité
+---
 
-Les informations fournies sur ce site sont données à titre indicatif. GAONARC'H WILLIAM s’efforce de les maintenir à jour et exactes, mais ne saurait garantir l’exactitude, la complétude ou l’actualité de ces informations.  
-L’éditeur se réserve le droit de modifier le contenu du site à tout moment, sans préavis.  
+## 2. Hébergement et nom de domaine
 
-## Données Personnelles
+**Hébergeur :** Vercel  
+Site web : [https://vercel.com](https://vercel.com)  
 
-Ce site peut collecter des données personnelles via des formulaires de contact ou d’abonnement. Ces données sont exclusivement destinées à GAONARC'H WILLIAM et ne sont en aucun cas transmises à des tiers.  
-Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d’un droit d’accès, de rectification, d’opposition, de portabilité et de suppression des données vous concernant.  
-Pour toute demande, veuillez contacter : willgaonarch@hotmail.fr  
+**Nom de domaine :** OVH  
+Site web : [https://www.ovh.com](https://www.ovh.com)  
 
-## Cookies
+---
 
-Ce site n'utilise pas de cookies à des fins de suivi ou d’analyse.  
+## 3. Propriété intellectuelle
 
-## Liens Hypertextes
+Tout le contenu du site (textes, images, logos, graphismes, code source) est la **propriété exclusive de AzertyCaps.fr** ou de ses partenaires, et est protégé par les lois françaises et internationales sur le droit d’auteur.  
+Toute reproduction ou utilisation sans autorisation est strictement interdite.
 
-Ce site peut contenir des liens vers d'autres sites web. GAONARC'H WILLIAM n’exerce aucun contrôle sur le contenu de ces sites et ne saurait être tenu responsable de leur contenu ou de leurs pratiques.  
+---
 
-## Loi applicable
+## 4. Responsabilité
 
-Le présent site est régi par la législation française. Tout litige relatif à son utilisation sera soumis à la compétence exclusive des tribunaux français.
+AzertyCaps.fr ne peut être tenu responsable :  
+- des erreurs ou omissions présentes sur le site  
+- des liens vers des sites externes et de leur contenu  
+- des dommages directs ou indirects pouvant résulter de l’utilisation du site  
+
+---
+
+## 5. Protection des données personnelles
+
+AzertyCaps.fr respecte le **RGPD** et ne collecte pas de données sensibles sans consentement.  
+Seules les données suivantes peuvent être collectées via les formulaires ou commandes :  
+- Nom et prénom  
+- Adresse email  
+- Informations de livraison et facturation  
+
+Les données sont utilisées uniquement pour :  
+- traiter les commandes et livraisons  
+- répondre aux demandes via le formulaire de contact  
+- améliorer le site et ses services  
+
+---
+
+## 6. Cookies et mesures d’audience
+
+Le site peut utiliser des cookies techniques ou des outils d’analyse anonymisés pour améliorer l’expérience utilisateur.  
+Aucun cookie de suivi publicitaire n’est utilisé.
+
+---
+
+## 7. Liens d’affiliation et partenaires
+
+Certaines pages peuvent contenir des **liens affiliés**, notamment vers **AliExpress**.  
+Si vous achetez via ces liens, AzertyCaps.fr peut percevoir une commission, sans coût supplémentaire pour vous.  
+Cette pratique permet de financer le site et de continuer à proposer des sélections de qualité.
+
+---
+
+## 8. Contact
+
+Pour toute question concernant les mentions légales, la protection de vos données ou l’affiliation :  
+📬 Email : willgaonarch@hotmail.fr  
+🌐 Site : [https://williamgaonarch.fr](https://williamgaonarch.fr)  
+
+---
+
+## 9. Modification des mentions légales
+
+Ces mentions légales peuvent être mises à jour à tout moment.  
+La date de dernière mise à jour est indiquée en haut de la page.

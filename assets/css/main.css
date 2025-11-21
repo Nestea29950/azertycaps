@@ -1,1 +1,75 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* === Thème perso === */
+
+@theme {
+
+  --color-primary: #000000;
+  --color-text: #000000;
+
+  --color-background: #FFFFFF;
+
+  --color-secondary: #24A5AB;
+  --color-thirty: #F9F9F9;
+
+  --color-btn-primary : #000000;
+  --color-btn-primary-hover : #000000;
+
+  --color-btn-secondary : #143557;
+  --color-btn-secondary-hover : #FFFFFF;
+
+  --font-primary: 'Inter', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+}
+
+/* inter-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/inter-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/inter-v20-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/inter-v20-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+body {
+  @apply font-primary;
+}
+
+.btn-primary {
+  @apply text-text bg-white hover:text-background hover:bg-btn-primary-hover font-medium  text-sm text-center cursor-pointer border border-text;
+}
+.btn-secondary {
+  @apply text-background bg-btn-secondary hover:text-primary hover:bg-btn-secondary-hover font-medium  text-sm text-center cursor-pointer border border-text;
+}
+
+@keyframes rotate180 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+.spin-180 {
+  animation: rotate180 0.5s ease-in-out forwards;
+}
+
