@@ -1,11 +1,8 @@
 <script setup>
 useHead({
-  title: 'Keycaps Azerty - Les Meilleurs Keycaps pour Clavier Mécanique Français ISO',
+  title: 'Keycaps ISO FR : Sélection de Keycaps AZERTY pour Clavier Mécanique',
   meta: [
-    { name: 'description', content: 'Découvrez les meilleurs keycaps Azerty pour personnaliser votre clavier mécanique français ISO. Meilleurs références de clavier iso français' },
-    { name: 'keywords', content: 'keycaps Azerty, claviers mécaniques, keycaps pour clavier, keycaps personnalisés, clavier français ISO' },
-    { name: 'robots', content: 'index, follow' },
-    { name: 'author', content: 'azertycaps.fr' },
+    { name: 'description', content: 'Découvrez les meilleurs keycaps ISO FR (AZERTY) pour claviers mécaniques. Sélection recommandée, comparatifs et modèles AliExpress de qualité au meilleur prix.' },
   ]
 });
 
@@ -40,5 +37,6 @@ const { data, error } = await useAsyncData('claviersData', async () => {
   <div>
     <!-- Passe 'data' directement à la prop 'ListClavier' -->
     <app-list-product :ListClavier="data" />
+    <AppFaq/>
   </div>
 </template>

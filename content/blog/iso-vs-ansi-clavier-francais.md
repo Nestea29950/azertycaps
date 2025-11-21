@@ -1,5 +1,5 @@
 ---
-title: "ISO vs ANSI : comprendre les claviers en France"
+title: "ISO vs ANSI : Comprendre les Différences Clés pour Optimiser vos Normes"
 description: "Vous hésitez entre un clavier ISO ou ANSI ? Découvrez les différences et pourquoi l’ISO est idéal pour l’AZERTY en France, avec un large choix de keycaps ISO sur notre site."
 date: "11-04-2025"
 author: "William"

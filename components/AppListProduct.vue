@@ -123,22 +123,14 @@ const selectedFormats = ref([]);
     <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
       <div>
           <h1 class="mt-3 text-xl font-semibold text-primary sm:text-2xl">
-            Keycaps français pour claviers mécaniques
+            Keycaps ISO FR : Sélection de Keycaps AZERTY pour Claviers Mécaniques
           </h1>
           <p>
-            Découvrez notre sélection de touches ISO‑FR (AZERTY) — y compris des sets Aliexpress soigneusement choisis pour trouver les meilleures claviers pas chers sans sacrifier la qualité.
+            Découvrez une sélection complète de keycaps ISO FR pour claviers mécaniques AZERTY. Que vous cherchiez des keycaps en PBT, en ABS, au profil OEM, Cherry ou SA, nous regroupons les meilleurs modèles disponibles en France et sur AliExpress. Notre objectif : vous aider à trouver facilement des keycaps ISO FR de qualité, compatibles avec votre setup, au meilleur prix.
           </p>
 
         </div>
 
-        <h2 class="mt-6 text-lg font-semibold text-primary sm:text-xl">
-          Pourquoi choisir des keycaps français pour votre clavier mécanique ?
-        </h2>
-        <p>
-          Bienvenue sur AzertyCaps.fr, votre guide pour trouver les meilleures touches de clavier ISO‑FR. Que vous cherchiez des keycaps pour améliorer le confort de frappe, personnaliser votre clavier mécanique, ou découvrir des sets Aliexpress de qualité, nous vous aidons à faire le bon choix.  
-
-          Nos sélections sont régulièrement mises à jour et testées pour leur qualité et leur style. Profitez d'un guide clair, rapide et sans publicité intrusive pour trouver les meilleures touches du moment.
-        </p>
       <div
         class="mb-4 items-end justify-between space-y-4 sm:flex sm:space-y-0 md:mb-8 flex flex-col"
       >
