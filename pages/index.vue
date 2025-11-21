@@ -3,7 +3,6 @@ useHead({
   title: 'Keycaps ISO FR : Sélection de Keycaps AZERTY pour Clavier Mécanique',
   meta: [
     { name: 'description', content: 'Découvrez les meilleurs keycaps ISO FR (AZERTY) pour claviers mécaniques. Sélection recommandée, comparatifs et modèles AliExpress de qualité au meilleur prix.' },
-        { name: 'robots', content: 'index, follow' } // <-- Ici, indexation globale
  
   ]
 });
