@@ -1,18 +1,15 @@
 <script setup lang="ts">
 const route = useRoute();
 
-const { data: page } = await useAsyncData(() =>
-  queryCollection("content").path("/mentions-legales").first()
-);
 
 useSeoMeta({
-  title: page.value.title,
-  description: page.value.description,
-  ogTitle: page.value.title,
-  ogDescription: page.value.description,
-  ogImage: page.value.image,
-  ogUrl: 'https://azertycaps.fr/mentions-legales',
+  title: 'FAQ - Tout savoir sur les keycaps et accessoires pour claviers Azerty | AzertyCaps.fr',
+  description: 'Consultez notre FAQ pour obtenir toutes les réponses sur les keycaps, accessoires de clavier et conseils pour personnaliser votre clavier Azerty. AzertyCaps.fr vous guide.',
+  ogTitle: 'FAQ - Keycaps et accessoires pour claviers Azerty | AzertyCaps.fr',
+  ogDescription: 'Découvrez notre FAQ complète sur les keycaps et accessoires pour claviers Azerty. Réponses aux questions fréquentes, conseils d’achat et astuces de personnalisation.',
+  ogUrl: 'https://azertycaps.fr/faq',
 })
+
 
 
 const plusSVG = `
