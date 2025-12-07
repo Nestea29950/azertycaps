@@ -13,10 +13,9 @@ useHead({
 
 const { data: articles } = await useAsyncData('blog', () =>
   queryCollection('blog')
-    .order('date', 'desc')     
+    .order('date', 'DESC')
     .all()
 )
-
 
 </script>
 
